@@ -16,5 +16,7 @@ namespace DatabaseTask.Core.Domain
         public required string AccessId { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? PositionDisabledDate { get; set; }
+
+        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

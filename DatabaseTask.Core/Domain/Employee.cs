@@ -24,6 +24,21 @@ namespace DatabaseTask.Core.Domain
         public int PositionId { get; set; }
         public required Position Position { get; set; }
 
+        public ICollection<SickLeave> SickLeaves { get; set; } = new List<SickLeave>();
+        public ICollection<Salary> Salaries { get; set; } = new List<Salary>();
+        public ICollection<VacationList> VacationLists { get; set; } = new List<VacationList>();
+        public ICollection<HealthCheck> HealthChecks { get; set; } = new List<HealthCheck>();
+        public ICollection<Child> Children { get; set; } = new List<Child>();
+
+        [InverseProperty("Creator")]
+        public ICollection<Hint> CreatedHints { get; set; } = new List<Hint>();
+        [InverseProperty("Creator")]
+        public ICollection<Request> CreatedRequests { get; set; } = new List<Request>();
+
+        [InverseProperty("ApprovedByEmployee")]
+        public ICollection<VacationList> ApprovedVacationLists { get; set; } = new List<VacationList>();
+        public ICollection<JobHistory> JobHistoryEntries { get; set; } = new List<JobHistory>();
+        public ICollection<ObjectRent> ObjectGrants { get; set; } = new List<ObjectRent>();
     }
 
 

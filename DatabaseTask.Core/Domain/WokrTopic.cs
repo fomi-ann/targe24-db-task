@@ -13,5 +13,7 @@ namespace DatabaseTask.Core.Domain
         public int Id { get; set; }
         public string? Description { get; set; }
 
+        public ICollection<Hint> Hints { get; set; } = new List<Hint>();
+        public ICollection<Request> Requests { get; set; } = new List<Request>();
     }
 }

@@ -16,5 +16,6 @@ namespace DatabaseTask.Core.Domain
         public required string SerialNumber { get; set; }
         public required string Condition { get; set; }
 
+        public ICollection<ObjectRent> ObjectGrants { get; set; } = new List<ObjectRent>();
     }
 }

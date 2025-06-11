@@ -13,5 +13,6 @@ namespace DatabaseTask.Core.Domain
         public int Id { get; set; }
         public required string Description { get; set; }
 
+        public ICollection<Position> Positions { get; set; } = new List<Position>();
     }
 }

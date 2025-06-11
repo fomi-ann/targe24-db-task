@@ -20,5 +20,6 @@ namespace DatabaseTask.Core.Domain
         public required int ApartmentNumber { get; set; }
         public required int PostalCode { get; set; }
 
+        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }
