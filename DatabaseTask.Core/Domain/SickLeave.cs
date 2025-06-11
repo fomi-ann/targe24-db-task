@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Salary
+    public class SickLeave
     {
         [Key]
         public int Id { get; set; }
@@ -17,8 +17,8 @@ namespace DatabaseTask.Core.Domain
         public required int EmployeeId { get; set; }
         public required Employee Employee { get; set; }
 
-        [Column(TypeName = "DECIMAL(18, 2)")]
-        public decimal EmployeeSalary { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public bool IsActive { get; set; }
     }
 }

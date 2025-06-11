@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Salary
+    public class VacationList
     {
         [Key]
         public int Id { get; set; }
@@ -17,8 +17,16 @@ namespace DatabaseTask.Core.Domain
         public required int EmployeeId { get; set; }
         public required Employee Employee { get; set; }
 
-        [Column(TypeName = "DECIMAL(18, 2)")]
-        public decimal EmployeeSalary { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
+        // FK
+        public int? ApprovedByEmployeeID { get; set; }
+        public required Employee ApprovedByEmployee { get; set; }
+
+        public DateTime? DateApproved { get; set; }
+        public byte TotalDays { get; set; }
+        public byte VacationalDaysUsed { get; set; }
+        public byte VacationalDaysRemaining { get; set; }
     }
 }

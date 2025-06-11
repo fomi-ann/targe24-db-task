@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Position
+    public class WorkTopic
     {
         [Key]
         public int Id { get; set; }
-
         public string? Description { get; set; }
-        public required string AccessId { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime? PositionDisabledDate { get; set; }
+
     }
 }
